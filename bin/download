@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+
+const argv = require('yargs')
+    .usage('Usage: $0 -g <group> [options]')
+    .example('$0 -g my-yahoo-group -s 1001 -c 500', 'Download up to 500 messages from "my-yahoo-group" starting at msg 1001')
+    .demand('g')
+    .alias('g', 'group')
+    .nargs('g', 1)
+    .describe('g', 'Name of the yahoo group')
+    .alias('s', 'start')
+    .nargs('s', 1)
+    .describe('s', 'Start message (defaults to last message downloaded + 1)')
+    .alias('c', 'count')
+    .nargs('c', 1)
+    .describe('c', 'Max count of messages to download')
+    .help('h')
+    .alias('h', 'help')
+    .argv;
+
+const { download } = require('..');
+
+download(argv.g, {startAt: argv.s, numToDownload: argv.c});

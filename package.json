@@ -1,0 +1,21 @@
+{
+  "name": "yahoo-group-download",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NetCuras/node-core.git"
+  },
+  "dependencies": {
+    "debug": "^3.1.0",
+    "moment": "^2.22.2",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2",
+    "unescape": "^1.0.1"
+  }
+}
